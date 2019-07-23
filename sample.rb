@@ -44,12 +44,16 @@ class Janken
     result = ((player_hand.to_i - enemy_hand.to_i) + 3) % 3    
 
     if result == 0
-      puts "The hand of the other party is #{rival_hand}.It is a draw"
+      puts "The hand of the other party is #{rival_hand}.It is a draw Please try again"
+        player = Player.new
+        enemy = Enemy.new
+        janken = Janken.new
+        janken.pon(player.hand, enemy.hand)
     elsif result == 1
-      puts "The hand of the other party is #{rival_hand}.You loose"
+      puts "The hand of the other party is #{rival_hand}.You loose" 
     elsif result == 2
       puts "The hand of the other party is #{rival_hand}.you are the winner"      
-    end
+    end   
   end
 end
    
